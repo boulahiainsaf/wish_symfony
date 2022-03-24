@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>Novitates autem si spem adferunt, ut tamquam in herbis non fallacibus fructus appareat, non sunt illae quidem repudiandae, vetustas tamen suo loco conservanda; maxima est enim vis vetustatis et consuetudinis. Quin in ipso equo, cuius modo feci mentionem, si nulla res impediat, nemo est, quin eo, quo consuevit, libentius utatur quam intractato et novo. Nec vero in hoc quod est animal, sed in iis etiam quae sunt inanima, consuetudo valet, cum locis ipsis delectemur, montuosis etiam et silvestribus, in quibus diutius commorati sumus.
+        Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos pagos adventans velut mutato repente consilio ad placidiora deverti.
+        Martinus agens illas provincias pro praefectis aerumnas innocentium graviter gemens saepeque obsecrans, ut ab omni culpa inmunibus parceretur, cum non inpetraret, minabatur se discessurum: ut saltem id metuens perquisitor malivolus tandem desineret quieti coalitos homines in aperta pericula proiectare.</p>
+    <section class="team-members">
+        {% for member in teamM %}
+            <article>
+                <img src="{{ member.picture }}" alt="{{ member.lastname }}">
+                <div>
+                    <h3>{{ member.firstname }} {{ member.lastname }} {{ member.firstname ==
+                        "Fabien" ? "&#128151" : "" }}</h3>
+                    <p>Creator of {{ member.creatorOf }}</p>
+                    <p>Date of birth: {{ member.dateOfBirth|date("d-m-Y") }}</p>
+                    <p>{{ member.description }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+
+
+{% endblock %}
+{% block title %}
+    About us {{ parent() }}
+{% endblock %}
+

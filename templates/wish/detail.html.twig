@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>detail page </h1>
+    <h2>{{ wish.title }} {{ wish.id }} [{{ wish.categorie.name }}]</h2>
+    <p>cread by {{ wish.author }} {{ wish.dateCreated|date}}</p>
+    <p>{{ wish.description }}</p>
+{% endblock %}
+{% block title %}
+    detail {{ parent() }}
+{% endblock %}
+
